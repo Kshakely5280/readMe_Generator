@@ -1,10 +1,8 @@
-// TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-// TODO: Create an array of questions for user input
-//const questions = [];
 inquirer
+//prompts for user to enter required information
   .prompt([
     {
       type: "input",
@@ -51,26 +49,22 @@ inquirer
     let guidelines = information.guidelines;
     let test = information.test;
     let license = information.license;
+    function showBadge(license) {
+        if (license !== "none") {
+          return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+        }
+        return "";
+      }
 
-    // let allInfo = [
-    //   "Installation",
-    //   "App Usage",
-    //   "Constributing Guidelines",
-    //   "App Testing",
-    //   "License Information",
-    // ];
-
-    let tableOfContents = `\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n`
-
-
-    
-
-    //console.log(license)
+    let tableOfContents = `\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n`;
 
     fs.writeFile(
       "README.md",
       `# ${title}\n\n#### Description\n\n${description}\n\n## Table of Contents\n\n${tableOfContents}\n\n## Installation Instructions <a name="installation-instructions"></a>\n\n${install}\n\n## Application Usage <a name="application-usage"></a>\n\n${usage}\n\n## Contribution Guidelines <a name="contribution-guidelines"></a>\n\n${guidelines}\n\n## Application Testing Instructions <a name="application-testing-instructions"></a>\n\n${test}\n\n## Application License <a name="application-license"></a>\n\n${license}`,
-      (err) => (err ? console.error(err) : console.log("Your ReadMe has been generated!"))
+      (err) =>
+        err
+          ? console.error(err)
+          : console.log("Your ReadMe has been generated!")
     );
   });
 
