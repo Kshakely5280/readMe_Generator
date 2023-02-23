@@ -54,7 +54,7 @@ inquirer
 
     //console.log(license)
 
-    fs.writeFile('README.md', `${title}\n${description}\t${install}\t${usage}\t${guidelines}\t${test}\t${license}`, (err) =>
+    fs.writeFile('README.md', `## ${title}\n\n ## Description\n\n${description}\n\n ## Installation Instructions\n\n${install}\n\n ## Usage Information\n\n${usage}\n\n ## Contribution Guidelines\n\n${guidelines}\n\n ## How to Test the App\n\n${test}\n\n ## Application license\n\n${license}`, (err) =>
 
   err ? console.error(err) : console.log('Commit logged!'))
 
