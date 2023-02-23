@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const fs = require('js')
+//const fs = require('js')
 const inquirer = require('inquirer')
 
 // TODO: Create an array of questions for user input
@@ -9,32 +9,38 @@ inquirer
     {
         type: 'input',
         name: 'title',
-        message: 'Please enter the title of your project'
+        message: 'Please enter the title of your project:'
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Please enter a description for your project'
+        message: 'Please enter a description for your project:'
     },
     {
         type: 'input',
         name: 'install',
-        message: 'Please provide installation instructions'
+        message: 'Please provide installation instructions:'
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'Please provide user usage information'
+        message: 'Please provide user usage information:'
     },
     {
         type: 'input',
         name: 'guidelines',
-        message: 'Please provide contribution guidelines'
+        message: 'Please provide contribution guidelines:'
     },
     {
         type: 'input',
         name: 'test',
-        message: 'Please provide app test instructions'
+        message: 'Please provide app test instructions:'
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Please select a license for your application:',
+        choices: ['MIT', 'GPLv2', 'Apache', 'GPLv3', 'Unlicense', 'Other']
     },
 ])
 
