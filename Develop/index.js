@@ -53,14 +53,15 @@ inquirer
         if (license !== "none") {
           return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
         }
-        return "";
+        return "Other";
       }
+
 
     let tableOfContents = `\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n`;
 
     fs.writeFile(
       "README.md",
-      `# ${title}\n\n#### Description\n\n${description}\n\n## Table of Contents\n\n${tableOfContents}\n\n## Installation Instructions <a name="installation-instructions"></a>\n\n${install}\n\n## Application Usage <a name="application-usage"></a>\n\n${usage}\n\n## Contribution Guidelines <a name="contribution-guidelines"></a>\n\n${guidelines}\n\n## Application Testing Instructions <a name="application-testing-instructions"></a>\n\n${test}\n\n## Application License <a name="application-license"></a>\n\n${license}`,
+      `# ${title}\n\n#### Description\n\n${description}\n\n## Table of Contents\n\n${tableOfContents}\n\n## Installation Instructions <a name="installation-instructions"></a>\n\n${install}\n\n## Application Usage <a name="application-usage"></a>\n\n${usage}\n\n## Contribution Guidelines <a name="contribution-guidelines"></a>\n\n${guidelines}\n\n## Application Testing Instructions <a name="application-testing-instructions"></a>\n\n${test}\n\n## Application License <a name="application-license"></a>\n\n${showBadge(license)}`,
       (err) =>
         err
           ? console.error(err)
