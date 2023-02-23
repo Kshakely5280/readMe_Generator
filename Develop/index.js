@@ -60,7 +60,7 @@ inquirer
     //   "License Information",
     // ];
 
-    let tableOfContents = '\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n'
+    let tableOfContents = `\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n`
 
 
     
@@ -69,7 +69,7 @@ inquirer
 
     fs.writeFile(
       "README.md",
-      `# ${title}\n\n #### Description\n\n${description}\n\n ### Table of Contents: ${tableOfContents}\n\n #### Installation Instructions\n\n${install}\n\n #### Usage Information\n\n${usage}\n\n #### Contribution Guidelines\n\n${guidelines}\n\n #### How to Test the App\n\n${test}\n\n ##### Application license <a name="license"></a>\n\n${license}`,
+      `# ${title}\n\n#### Description\n\n${description}\n\n## Table of Contents\n\n${tableOfContents}\n\n## Installation Instructions <a name="installation-instructions"></a>\n\n${install}\n\n## Application Usage <a name="application-usage"></a>\n\n${usage}\n\n## Contribution Guidelines <a name="contribution-guidelines"></a>\n\n${guidelines}\n\n## Application Testing Instructions <a name="application-testing-instructions"></a>\n\n${test}\n\n## Application License <a name="application-license"></a>\n\n${license}`,
       (err) => (err ? console.error(err) : console.log("Your ReadMe has been generated!"))
     );
   });
