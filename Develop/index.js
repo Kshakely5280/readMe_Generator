@@ -2,7 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 
 inquirer
-//prompts for user to enter required information
+  //prompts for user to enter required information
   .prompt([
     {
       type: "input",
@@ -49,19 +49,23 @@ inquirer
     let guidelines = information.guidelines;
     let test = information.test;
     let license = information.license;
+
     function showBadge(license) {
-        if (license !== "none") {
-          return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-        }
-        return "Other";
+      if (license !== "none") {
+        return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
       }
+      return "Other";
+    }
 
+    // const contact = "please con";
 
-    let tableOfContents = `\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n`;
+    let tableOfContents = `\n[Installation](#installation)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Testing](#testing)\n[Questions & Contact Information](#contact)`;
 
     fs.writeFile(
       "README.md",
-      `# ${title}\n\n#### Description\n\n${description}\n\n## Table of Contents\n\n${tableOfContents}\n\n## Installation Instructions <a name="installation-instructions"></a>\n\n${install}\n\n## Application Usage <a name="application-usage"></a>\n\n${usage}\n\n## Contribution Guidelines <a name="contribution-guidelines"></a>\n\n${guidelines}\n\n## Application Testing Instructions <a name="application-testing-instructions"></a>\n\n${test}\n\n## Application License <a name="application-license"></a>\n\n${showBadge(license)}`,
+      `# ${title}\n\n#### Description\n\n${description}\n\n#### Application License <a name="application-license"></a>\n\n${showBadge(
+        license
+      )}\n\n## Table of Contents\n\n${tableOfContents}\n\n## Installation <a name="installation"></a>\n\n${install}\n\n## Application Usage <a name="application-usage"></a>\n\n${usage}\n\n## Contribution Guidelines <a name="contribution-guidelines"></a>\n\n${guidelines}\n\n## Testing <a name="testing"></a>\n\n${test}\n\n## Questions & Contact information\n\n`,
       (err) =>
         err
           ? console.error(err)
