@@ -1,73 +1,84 @@
 // TODO: Include packages needed for this application
-const fs = require('fs')
-const inquirer = require('inquirer')
+const fs = require("fs");
+const inquirer = require("inquirer");
 
 // TODO: Create an array of questions for user input
 //const questions = [];
 inquirer
-.prompt([
+  .prompt([
     {
-        type: 'input',
-        name: 'title',
-        message: 'Please enter the title of your project:'
+      type: "input",
+      name: "title",
+      message: "Please enter the title of your project:",
     },
     {
-        type: 'input',
-        name: 'description',
-        message: 'Please enter a description for your project:'
+      type: "input",
+      name: "description",
+      message: "Please enter a description for your project:",
     },
     {
-        type: 'input',
-        name: 'install',
-        message: 'Please provide installation instructions:'
+      type: "input",
+      name: "install",
+      message: "Please provide installation instructions:",
     },
     {
-        type: 'input',
-        name: 'usage',
-        message: 'Please provide user usage information:'
+      type: "input",
+      name: "usage",
+      message: "Please provide user usage information:",
     },
     {
-        type: 'input',
-        name: 'guidelines',
-        message: 'Please provide contribution guidelines:'
+      type: "input",
+      name: "guidelines",
+      message: "Please provide contribution guidelines:",
     },
     {
-        type: 'input',
-        name: 'test',
-        message: 'Please provide app test instructions:'
+      type: "input",
+      name: "test",
+      message: "Please provide app test instructions:",
     },
     {
-        type: 'list',
-        name: 'license',
-        message: 'Please select a license for your application:',
-        choices: ['MIT', 'GPLv2', 'Apache', 'GPLv3', 'Unlicense', 'Other']
+      type: "list",
+      name: "license",
+      message: "Please select a license for your application:",
+      choices: ["MIT", "GPLv2", "Apache", "GPLv3", "Unlicense", "Other"],
     },
-])
-.then(information => {
-    let title = information.title
-    let description = information.description
-    let install = information.install
-    let usage = information.usage
-    let guidelines = information.guidelines
-    let test = information.test
-    let license = information.license
+  ])
+  .then((information) => {
+    let title = information.title;
+    let description = information.description;
+    let install = information.install;
+    let usage = information.usage;
+    let guidelines = information.guidelines;
+    let test = information.test;
+    let license = information.license;
+
+    // let allInfo = [
+    //   "Installation",
+    //   "App Usage",
+    //   "Constributing Guidelines",
+    //   "App Testing",
+    //   "License Information",
+    // ];
+
+    let tableOfContents = '\n[Installation Instructions](#install)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing Instructions](#test)\n[Application License](#license)\n'
+
+
+    
 
     //console.log(license)
 
-    fs.writeFile('README.md', `## ${title}\n\n ## Description\n\n${description}\n\n ## Installation Instructions\n\n${install}\n\n ## Usage Information\n\n${usage}\n\n ## Contribution Guidelines\n\n${guidelines}\n\n ## How to Test the App\n\n${test}\n\n ## Application license\n\n${license}`, (err) =>
-
-  err ? console.error(err) : console.log('Commit logged!'))
-
-})
-
-
+    fs.writeFile(
+      "README.md",
+      `# ${title}\n\n #### Description\n\n${description}\n\n ### Table of Contents: ${tableOfContents}\n\n #### Installation Instructions\n\n${install}\n\n #### Usage Information\n\n${usage}\n\n #### Contribution Guidelines\n\n${guidelines}\n\n #### How to Test the App\n\n${test}\n\n ##### Application license <a name="license"></a>\n\n${license}`,
+      (err) => (err ? console.error(err) : console.log("Your ReadMe has been generated!"))
+    );
+  });
 
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 init();
-
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
