@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-//const fs = require('js')
+const fs = require('fs')
 const inquirer = require('inquirer')
 
 // TODO: Create an array of questions for user input
@@ -43,9 +43,24 @@ inquirer
         choices: ['MIT', 'GPLv2', 'Apache', 'GPLv3', 'Unlicense', 'Other']
     },
 ])
+.then(information => {
+    let title = information.title
+    let description = information.description
+    let install = information.install
+    let usage = information.usage
+    let guidelines = information.guidelines
+    let test = information.test
+    let license = information.license
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+    //console.log(license)
+
+    fs.writeFile('README.md', `${title}\n${description}\t${install}\t${usage}\t${guidelines}\t${test}\t${license}`, (err) =>
+
+  err ? console.error(err) : console.log('Commit logged!'))
+
+})
+
+
 
 // TODO: Create a function to initialize app
 function init() {}
