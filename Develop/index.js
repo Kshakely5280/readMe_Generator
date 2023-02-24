@@ -1,5 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require('./utils/generateMarkdown')
 
 inquirer
   //prompts for user to enter required information
@@ -40,6 +41,16 @@ inquirer
       message: "Please select a license for your application:",
       choices: ["MIT", "GPLv2", "Apache", "GPLv3", "Unlicense", "Other"],
     },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'Please enter your Github username:'
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Please enter contact email:'
+    }
   ])
   .then((information) => {
     let title = information.title;
@@ -49,17 +60,10 @@ inquirer
     let guidelines = information.guidelines;
     let test = information.test;
     let license = information.license;
+    let github = information.github;
+    let email = information.email;
 
-    function showBadge(license) {
-      if (license !== "none") {
-        return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-      }
-      return "Other";
-    }
 
-    // const contact = "please con";
-
-    let tableOfContents = `\n[Installation Instructions](#installation)\n[Application Usage](#usage)\n[Contribution Guidelines](#Guidelines)\n[Application Testing](#testing)\n[Questions & Contact Information](#contact)`;
 
     fs.writeFile(
       "README.md",
