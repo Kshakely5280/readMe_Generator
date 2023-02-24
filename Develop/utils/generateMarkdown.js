@@ -19,21 +19,25 @@ ${showBadge(information.license)}
 #### Description
 ${information.description}
 ## Table Of Contents:
-* [Installation Instructions](#installation-instructions)
-* [Application Usage](#application-usage)
-* [Contribution Guidelines](#contribution-guidelines)
-* [Application Testing](#application-testing)
-* [Questions and Contact Information](#questions-and-contact-information)
-### Installation Instructions {#installation-instructions}
+* [Installation Instructions](#install)
+* [Application Usage](#usage)
+* [Contribution Guidelines](#guidelines)
+* [Application Testing](#test)
+* [Questions and Contact Information](#contact)
+### Installation Instructions
 ${information.install}
-### Application Usage {#application-usage}
+### Application Usage
 ${information.usage}
-### Contribution Guidelines {#contribution-guidelines}
+### Contribution Guidelines
 ${information.guidelines}
-### Application Testing {#application-testing}
+### Application Testing
 ${information.test}
-### Questions and Contact Information  {#questions-and-contact-information}
-Please sent questions to ${information.email} or reach me through Github, username: ${information.github}
+### Questions and Contact Information
+Please sent questions to ${
+    information.email
+  } or reach me through Github, username: https://github.com/${
+    information.github
+  }
 
 `;
 }
