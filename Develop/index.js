@@ -67,9 +67,3 @@ inquirer
       err ? console.error(err) : console.log("Your ReadMe has been generated!")
     );
   });
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
