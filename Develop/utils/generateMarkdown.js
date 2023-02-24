@@ -24,18 +24,18 @@ ${information.description}
 * [Contribution Guidelines](#guidelines)
 * [Application Testing](#test)
 * [Questions and Contact Information](#contact)
-### Installation Instructions
+### Installation Instructions <a name="install"></a>
 ${information.install}
-### Application Usage
+### Application Usage <a name="usage"></a>
 ${information.usage}
-### Contribution Guidelines
+### Contribution Guidelines <a name="guidelines"></a>
 ${information.guidelines}
-### Application Testing
+### Application Testing <a name="test"></a>
 ${information.test}
-### Questions and Contact Information
+### Questions and Contact Information <a name="contact"></a>
 Please sent questions to ${
     information.email
-  } or reach me through Github, username: https://github.com/${
+  } or reach me through Github, link: https://github.com/${
     information.github
   }
 
