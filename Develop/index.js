@@ -53,6 +53,7 @@ inquirer
     },
   ])
   .then((information) => {
+    // collects values to mad lib into the exported markdown file
     let title = information.title;
     let description = information.description;
     let install = information.install;
@@ -62,7 +63,7 @@ inquirer
     let license = information.license;
     let github = information.github;
     let email = information.email;
-
+    // creates file, or overwrites existing file with new user input
     fs.writeFile("README.md", generateMarkdown(information), (err) =>
       err ? console.error(err) : console.log("Your ReadMe has been generated!")
     );

@@ -5,7 +5,7 @@ function showBadge(license) {
   return "";
 }
 
-// If there is no license, return an empty string
+// license badge and information links 
 function renderLicenseLink(license) {
   switch (license) {
     case "MIT":
@@ -35,7 +35,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// Function generate markdown formatts and takes previouosly captured user input for the readme
 function generateMarkdown(information) {
   return `# ${information.title}
 ${showBadge(information.license)}
