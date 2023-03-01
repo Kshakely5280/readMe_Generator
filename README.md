@@ -17,6 +17,6 @@ n/a
 ### Application Testing <a name="test"></a>
 run node index.js to begin prompts.
 ### Questions and Contact Information <a name="contact"></a>
-To see the video walkthrough, please click here: https://www.loom.com/share/62032da12baa48aa97ed72ae30d98d18. Please sent questions to kyleshakely@yahoo.com or reach me through Github, link: https://github.com/kshakely5280
+To see the video walkthrough, please click here: https://www.loom.com/share/62032da12baa48aa97ed72ae30d98d18. Please send questions to kyleshakely@yahoo.com or reach me through Github, link: https://github.com/kshakely5280
 #### License Information <a name="license"></a>
 ##### Click to learn more about this license: [![License](https://img.shields.io/badge/License-unlicense-blue.svg)](https://opensource.org/licenses/unlicense)
