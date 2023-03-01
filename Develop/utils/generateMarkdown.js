@@ -56,7 +56,7 @@ ${information.guidelines}
 ### Application Testing <a name="test"></a>
 ${information.test}
 ### Questions and Contact Information <a name="contact"></a>
-Please sent questions to ${
+To see the video walkthrough, please click here: https://www.loom.com/share/62032da12baa48aa97ed72ae30d98d18. Please sent questions to ${
     information.email
   } or reach me through Github, link: https://github.com/${information.github}
 #### License Information <a name="license"></a>
